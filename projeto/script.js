@@ -212,11 +212,13 @@ formulario.addEventListener("submit", event => {
     const departamento = document.querySelector("#departamento").value.toUpperCase();
 
     if (!nome || !cargo || !salario || !departamento) {
-        alertaForm.innerHTML = "<p class='border fixed p-3 font-semibold border-red-500 text-red-500 p2 rounded-lg text-center right-0 bottom-5 text-white'>Existem campos a serem preenchidos, preencha todos os campos para cadastrar o funcionário!</p>";
+        alertaForm.innerHTML = "<p class='border z-[9999] fixed p-3 font-semibold border-red-500 text-red-500 p2 rounded-lg text-center right-0 bottom-5 text-white'>Existem campos a serem preenchidos, preencha todos os campos para cadastrar o funcionário!</p>";
+
+        setTimeout(() => {
+            alertaForm.innerHTML = "";
+        }, 3000)
         return;
     };
-
-    alertaForm.innerHTML = "";
 
     localStorage.setItem("id", usuarios.length + 1)
 
@@ -240,6 +242,12 @@ formulario.addEventListener("submit", event => {
 
     fechaModal();
     formulario.reset();
+
+    alertaForm.innerHTML = "<p class='border z-[9999] fixed p-3 bg-green-300 font-semibold border-green-500 text-green-500 p2 rounded-lg text-center top-7 left-[650px]'>Funcionário Cadastrado com Sucesso!</p>"
+
+    setTimeout(() => {
+        alertaForm.innerHTML = "";
+    }, 3000)
 });
 
 links.forEach(link => {
