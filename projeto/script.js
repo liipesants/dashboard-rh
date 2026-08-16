@@ -47,7 +47,7 @@ const calculaSalarioMedio = (users) => {
         return 0;
     }
 
-    const salarioSoma = users.reduce((total, user) => total + user.salario, 0);
+    const salarioSoma = users.reduce((total, user) => total + Number(user.salario), 0);
     const media = salarioSoma / users.length;
 
     return Math.round(media);
@@ -280,6 +280,22 @@ modo.addEventListener("click", event => {
 
         localStorage.setItem("tema", "escuro");
     }
+});
+
+pesquisar.addEventListener("input", event => {
+    event.preventDefault();
+
+    const termoPesquisa = event.target.value.toLowerCase().trim();
+
+    const funcionarioPesquisado = usuarios.filter(user => {
+        const nome = user.nome ? user.nome.toLowerCase() : "";
+        const cargo = user.cargo ? user.cargo.toLowerCase() : "";
+        const departamento = user.departamento ? user.departamento.toLowerCase() : "";
+
+        return nome.includes(termoPesquisa) || cargo.includes(termoPesquisa) || departamento.includes(termoPesquisa);
+    })
+
+    criaFuncionario(funcionarioPesquisado);
 });
 
 if (temaSalvo === "claro") {
