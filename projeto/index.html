@@ -15,10 +15,10 @@
   <title>Projeto Dashboard</title>
 </head>
 
-<body id="body">
-  <div id="pai" class="h-screen w-full bg-slate-950 flex flex-row">
+<body id="body" class="">
+  <div id="pai" class="w-full bg-slate-950 flex flex-row min-h-screen">
     <div id="sidebar"
-      class="elementos3 w-[300px] px-5 py-3 h-full bg-[#0c1021] flex flex-col justify-between border-r border-slate-800">
+      class="elementos3 w-[300px] px-5 py-3 h-screen bg-[#0c1021] flex flex-col justify-between border-r border-slate-800 sticky top-0">
       <div class="organizadora flex flex-col gap-10">
         <div class="flex flex-col">
           <h1 class="elementos2 text-white text-4xl font-bold font-['Inter']">LipeTech</h1>
@@ -53,7 +53,7 @@
         Light/Dark Mode
       </button>
     </div>
-    <div id="main" class="flex flex-col w-full h-full">
+    <div id="main" class="flex-col w-full h-full overflow-hidden">
       <div id="header"
         class="elementos3 w-full h-[5em] flex flex-row items-center p-5 bg-[#0C101C] border-b border-slate-800 justify-between">
         <label for="pesquisar" class="flex flex-row items-center cursor-text relative">
@@ -137,11 +137,11 @@
           <p id="salarioMedio" class="text-2xl font-medium">0</p>
         </div>
       </div>
-      <div>
-        <table class="w-full text-sm text-left table-fixed ">
+      <div class="overflow-y-auto flex-1">
+        <table class="w-full text-sm text-left table-fixed">
           <thead>
             <tr
-              class="elementos1 elementos3 text-slate-100/50 items-center text-sm font-medium border-r border-t border-b border-slate-800">
+              class="elementos1 elementos3 text-slate-100/50 items-center text-sm font-medium border-r border-t border-b border-slate-800 ">
               <th class="py-4 px-6 w-[8%] text-center">ID</th>
               <th class="py-4 px-6 w-[27%] text-left">COLABORADOR</th>
               <th class="py-4 px-6 w-[20%] text-left">CARGO</th>

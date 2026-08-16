@@ -231,7 +231,6 @@ formulario.addEventListener("submit", event => {
         status: "ATIVO"
     };
 
-
     usuarios.push(usuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
